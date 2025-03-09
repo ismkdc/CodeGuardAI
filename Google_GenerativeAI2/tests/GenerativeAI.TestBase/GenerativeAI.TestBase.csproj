@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0;net9.0;net472;net6.0;net7.0</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+         <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+
+    </PropertyGroup>
+
+    <ItemGroup>
+        
+        <PackageReference Include="xunit.v3.extensibility.core" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+       
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\GenerativeAI.Auth\GenerativeAI.Auth.csproj" />
+      <ProjectReference Include="..\..\src\GenerativeAI\GenerativeAI.csproj" />
+    </ItemGroup>
+
+</Project>

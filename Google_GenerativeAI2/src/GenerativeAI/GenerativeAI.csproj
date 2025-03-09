@@ -1,0 +1,87 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0;net8.0;netstandard2.0;net9.0;net462</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <LangVersion>latest</LangVersion>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <PackageId>Google_$(AssemblyName)</PackageId>
+	  <Title>Unofficial Google GenerativeAI (Gemini) SDK</Title>
+	  <Authors>Gunpal Jain</Authors>
+	  <Company />
+	  <Description>Unofficial C# Google Generative AI SDK (Google Gemini) with function calls support</Description>
+	  <PackageProjectUrl>https://github.com/gunpal5/Google_GenerativeAI</PackageProjectUrl>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <RepositoryUrl>https://github.com/gunpal5/Google_GenerativeAI</RepositoryUrl>
+	  <PackageTags>Gemini,Google,GenerativeAI,GoogleGemini.Net,Google,Gemini,Gemini .Net,GoogleGemini,GenerativeAI .Net,Vertex AI</PackageTags>
+	  <Version>2.3.1</Version>
+	  <AssemblyVersion>2.3.1</AssemblyVersion>
+	  <FileVersion>2.3.1</FileVersion>
+	  <SignAssembly>True</SignAssembly>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net9.0'">
+        <PackageReference Include="JsonSchema.Net.Generation" Version="5.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.1"/>
+        <PackageReference Include="System.Text.Json" Version="9.0.2"/>
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0'">
+        <PackageReference Include="JsonSchema.Net.Generation" Version="5.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.1"/>
+        <PackageReference Include="System.Text.Json" Version="9.0.2"/>
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net7.0'">
+        <PackageReference Include="JsonSchema.Net.Generation" Version="3.5.1"/>
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1"/>
+        <PackageReference Include="System.Text.Json" Version="8.0.5"/>
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
+         <PackageReference Include="JsonSchema.Net.Generation" Version="3.5.1"/>
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1"/>
+        <PackageReference Include="System.Text.Json" Version="8.0.5"/>
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+         <PackageReference Include="JsonSchema.Net.Generation" Version="3.5.1"/>
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1"/>
+        <PackageReference Include="System.Text.Json" Version="8.0.5"/>
+        <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0"/>
+        <PackageReference Include="System.Net.Http" Version="4.3.4"/>
+    </ItemGroup>
+    <!-- <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0'">
+        <PackageReference Include="JsonSchema.Net.Generation" Version="2.2.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.1"/>
+        <PackageReference Include="System.Text.Json" Version="6.0.2"/>
+    </ItemGroup> -->
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net462'">
+        <PackageReference Include="JsonSchema.Net.Generation" Version="5.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.1"/>
+        <PackageReference Include="System.Text.Json" Version="9.0.1"/>
+        <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0"/>
+        <PackageReference Include="System.Net.Http" Version="4.3.4"/>
+    </ItemGroup>
+
+  <ItemGroup>
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Clients\Imagen\" />
+    <Folder Include="Types\Converters\" />
+    <Folder Include="Types\Tuning\Permissions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Net" Condition="'$(TargetFramework)' == 'net462'" />
+    <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net462'" />
+  </ItemGroup>
+
+</Project>
